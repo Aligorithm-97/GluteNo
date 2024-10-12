@@ -10,6 +10,7 @@ function App() {
       <div>create a free food api and deploy</div>
       <div>first version does not include login or any other service</div>
       <div>main purpose is api</div>
+      <div>elastic search</div>
     </div>
   );
 }
