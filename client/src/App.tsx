@@ -3,6 +3,7 @@ import "./App.css";
 function App() {
   return (
     <div style={{ color: "white" }}>
+      <input type="text" />
       <div>Seach bar</div>
       <div>Foods in cards</div>
       <div>calori - glutenFree or not</div>
@@ -11,6 +12,7 @@ function App() {
       <div>first version does not include login or any other service</div>
       <div>main purpose is api</div>
       <div>elastic search</div>
+      <div></div>
     </div>
   );
 }
