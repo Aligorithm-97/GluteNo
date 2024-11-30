@@ -1,8 +1,43 @@
 .example-card {
     max-width: 400px;
-    margin: 50px;
   }
   
   .example-header-image {
     background-size: cover;
   }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+    padding: 16px;
+  }
+  
+
+  .search-container {
+    position: sticky; 
+    top: 0; 
+    background: #ffffff; 
+    z-index: 1000;
+    padding: 16px 0; 
+    text-align: center; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .search-container input[type="text"] {
+    width: 50%; 
+    max-width: 600px; 
+    padding: 12px 16px; 
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    font-size: 16px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .search-container input[type="text"]:focus {
+    outline: none; 
+    border-color: #007BFF; 
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2); 
+  }
+  

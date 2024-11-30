@@ -1,18 +1,22 @@
 
 <h1>Angular + Spring Boot + ElasticSearch + Redis + Mongo</h1>
-<input type="text" name="search" placeholder="Search food" id="">
-<mat-card class="example-card" appearance="outlined">
-  <mat-card-header>
-    <mat-card-title>White Bread</mat-card-title>
-    <mat-card-subtitle>Bread</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="assets/white.png" alt="Photo of a Shiba Inu">
-  <mat-card-content>
-    <p>
-     X Contains gluten X
-    </p>
-  </mat-card-content>
-</mat-card>
+<div class="search-container">
+  <input type="text" placeholder="Search...">
+</div>
+<div *ngFor="let item of items" class="cards">
+  <mat-card class="example-card" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>{{ item.title }}</mat-card-title>
+      <mat-card-subtitle>{{ item.subtitle }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="item.image" [alt]="item.altText">
+    <mat-card-content>
+      <p>
+        {{ item.description }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>
 
 
 <router-outlet />
