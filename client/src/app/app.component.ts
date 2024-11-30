@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent {
 
-  items = Array.from({ length: 20 }, (_, index) => ({
+  items = Array.from({ length: 100 }, (_, index) => ({
     title: `White Bread ${index + 1}`,
     subtitle: 'Bread',
     image: 'assets/white.png',
