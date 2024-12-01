@@ -11,6 +11,9 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent {
 
+
+  // ngOnInit -> get all foods from mongo db
+
   items = Array.from({ length: 100 }, (_, index) => ({
     title: `White Bread ${index + 1}`,
     subtitle: 'Bread',
