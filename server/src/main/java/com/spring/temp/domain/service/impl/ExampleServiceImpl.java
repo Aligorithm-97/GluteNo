@@ -14,12 +14,10 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(readOnly = true)
 public class ExampleServiceImpl implements ExampleService {
 
-    private final ExampleMapper exampleMapper;
     @Override
     public void getAll() {
         UserActions userActions = new UserActions();
         // Mapper usage
-        ExampleDto exampleDto = exampleMapper.userActionToExampleDto(userActions);
         // Repository actions etc.
     }
 }
