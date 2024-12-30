@@ -1,0 +1,22 @@
+<form (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Product Name"
+      [(ngModel)]="product.name"
+      name="name"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Description"
+      [(ngModel)]="product.description"
+      name="description"
+    />
+  </mat-form-field>
+  <mat-checkbox [(ngModel)]="product.isGlutenFree" name="isGlutenFree"
+    >Gluten-Free</mat-checkbox
+  >
+  <button mat-raised-button type="submit">Add Product</button>
+</form>

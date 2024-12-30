@@ -1,0 +1,12 @@
+<div>
+  <app-search-bar (search)="handleSearch($event)"></app-search-bar>
+  <div
+    *ngFor="
+      let product of products
+        | paginate : { itemsPerPage: 10, currentPage: page }
+    "
+  >
+    <app-product-card [product]="product"></app-product-card>
+  </div>
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>

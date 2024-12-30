@@ -1,0 +1,11 @@
+<div class="search-bar-container">
+  <input
+    matInput
+    type="text"
+    placeholder="Search products..."
+    [(ngModel)]="searchTerm"
+  />
+  <button mat-raised-button color="primary" (click)="onSearch()">
+    <mat-icon>search</mat-icon> Search
+  </button>
+</div>
