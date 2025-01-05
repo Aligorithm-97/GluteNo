@@ -27,8 +27,12 @@ export class ProductListComponent {
     altText: "Photo of White Bread",
     description: "X Contains gluten X",
   }));
+  filteredProducts = [...this.products];
   page: number = 1;
   handleSearch(searchTerm: string) {
-    console.log("Search Term:", searchTerm);
+    this.filteredProducts = this.products.filter((e) =>
+      e.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    this.page = 1;
   }
 }

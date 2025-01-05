@@ -1,11 +1,15 @@
 <div>
+  <h1>
+    Angular + Spring Boot + ElasticSearch + Redis + Mongo + Postgres ->
+    Microservice
+  </h1>
   <app-search-bar (search)="handleSearch($event)"></app-search-bar>
   <div class="search-container">
     <input type="text" placeholder="Search..." />
   </div>
   <div
     *ngFor="
-      let product of products
+      let product of filteredProducts
         | paginate : { itemsPerPage: 10, currentPage: page }
     "
   >
