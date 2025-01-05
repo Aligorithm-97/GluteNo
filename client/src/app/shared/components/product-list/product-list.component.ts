@@ -20,7 +20,13 @@ import { MatCardModule } from "@angular/material/card";
   styleUrls: ["./product-list.component.css"],
 })
 export class ProductListComponent {
-  products = [];
+  products = Array.from({ length: 20 }, (_, index) => ({
+    title: `White Bread ${index + 1}`,
+    subtitle: "Bread",
+    image: "assets/white.png",
+    altText: "Photo of White Bread",
+    description: "X Contains gluten X",
+  }));
   page: number = 1;
   handleSearch(searchTerm: string) {
     console.log("Search Term:", searchTerm);

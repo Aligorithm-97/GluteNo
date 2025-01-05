@@ -1,0 +1,15 @@
+<div class="cards">
+  <mat-card class="example-card" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>{{ product.title }}</mat-card-title>
+      <mat-card-subtitle>{{ product.subtitle }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-title>{{ product.name }}</mat-card-title>
+    <mat-card-subtitle>
+      {{ product.isGlutenFree ? "Gluten-Free" : "Contains Gluten" }}
+    </mat-card-subtitle>
+    <mat-card-content>
+      <p>{{ product.description }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

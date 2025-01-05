@@ -1,23 +1,2 @@
 <router-outlet />
-<div class="search-container">
-  <input type="text" placeholder="Search..." />
-</div>
-<div class="cards">
-  <mat-card
-    *ngFor="let item of items"
-    class="example-card"
-    appearance="outlined"
-  >
-    <mat-card-header>
-      <mat-card-title>{{ item.title }}</mat-card-title>
-      <mat-card-subtitle>{{ item.subtitle }}</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image [src]="item.image" [alt]="item.altText" />
-    <mat-card-content>
-      <p>
-        {{ item.description }}
-      </p>
-    </mat-card-content>
-  </mat-card>
-</div>
 <!-- Angular + Spring Boot + ElasticSearch + Redis + Mongo -->

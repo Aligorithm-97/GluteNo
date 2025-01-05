@@ -1,5 +1,8 @@
 <div>
   <app-search-bar (search)="handleSearch($event)"></app-search-bar>
+  <div class="search-container">
+    <input type="text" placeholder="Search..." />
+  </div>
   <div
     *ngFor="
       let product of products

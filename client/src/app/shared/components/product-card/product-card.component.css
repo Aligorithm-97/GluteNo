@@ -1,0 +1,15 @@
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-size: cover;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  padding: 16px;
+  overflow: hidden;
+}
