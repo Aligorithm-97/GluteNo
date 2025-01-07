@@ -9,17 +9,19 @@ import { MatCardModule } from "@angular/material/card";
 import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
+import { MatChipsModule } from "@angular/material/chips";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { CommonModule } from "@angular/common";
 
 import { routes } from "./app.routes";
-import { CommonModule } from "@angular/common";
-import { MatFormFieldModule } from "@angular/material/form-field";
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideRouter(routes),
     provideHttpClient(),
     provideAnimations(),
-    provideRouter(routes),
     importProvidersFrom(
+      CommonModule,
       FormsModule,
       ReactiveFormsModule,
       NgxPaginationModule,
@@ -27,7 +29,7 @@ export const appConfig: ApplicationConfig = {
       MatInputModule,
       MatButtonModule,
       MatIconModule,
-      CommonModule,
+      MatChipsModule,
       MatFormFieldModule
     ),
   ],

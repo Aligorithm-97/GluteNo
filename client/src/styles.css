@@ -1,4 +1,69 @@
 /* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+:root {
+  --primary-color: #3f51b5;
+  --accent-color: #4caf50;
+  --warn-color: #f44336;
+  --background-color: #f5f5f5;
+  --surface-color: #ffffff;
+  --text-color: #333333;
+  --secondary-text-color: #666666;
+  --border-color: #dddddd;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --button-hover: rgba(0, 0, 0, 0.04);
+  --button-active: rgba(0, 0, 0, 0.12);
+}
+
+.dark-theme {
+  --primary-color: #7986cb;
+  --accent-color: #81c784;
+  --warn-color: #e57373;
+  --background-color: #121212;
+  --surface-color: #1e1e1e;
+  --text-color: #ffffff;
+  --secondary-text-color: #aaaaaa;
+  --border-color: #333333;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --button-hover: rgba(255, 255, 255, 0.08);
+  --button-active: rgba(255, 255, 255, 0.16);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.mat-mdc-form-field {
+  background-color: var(--surface-color) !important;
+}
+
+.mat-mdc-text-field-wrapper {
+  background-color: var(--surface-color) !important;
+}
+
+.mat-toolbar {
+  background-color: var(--surface-color) !important;
+  color: var(--text-color) !important;
+}
+
+.mat-mdc-card {
+  background-color: var(--surface-color) !important;
+  color: var(--text-color) !important;
+}
+
+.mat-mdc-form-field-label {
+  color: var(--secondary-text-color) !important;
+}
+
+.mat-mdc-input-element {
+  color: var(--text-color) !important;
+}

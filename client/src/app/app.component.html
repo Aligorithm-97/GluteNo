@@ -1,1 +1,56 @@
-<router-outlet />
+<div class="app-container">
+  <header class="main-header">
+    <div class="header-content">
+      <div class="left-section">
+        <app-logo></app-logo>
+      </div>
+
+      <div class="center-section">
+        <mat-form-field appearance="outline" class="search-field">
+          <mat-label>Search Products</mat-label>
+          <input
+            matInput
+            type="text"
+            [(ngModel)]="searchTerm"
+            (ngModelChange)="handleSearch($event)"
+            placeholder="Search by product name or description..."
+          />
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+      </div>
+
+      <div class="right-section">
+        <button mat-icon-button (click)="toggleTheme()" class="theme-toggle">
+          <mat-icon>{{ isDarkTheme ? "light_mode" : "dark_mode" }}</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <nav class="filter-section">
+      <button mat-raised-button color="primary" (click)="filterProducts('all')">
+        <mat-icon>all_inclusive</mat-icon>
+        All Products
+      </button>
+      <button
+        mat-raised-button
+        color="accent"
+        (click)="filterProducts('gluten-free')"
+      >
+        <mat-icon>check_circle</mat-icon>
+        Gluten-Free Products
+      </button>
+      <button
+        mat-raised-button
+        color="warn"
+        (click)="filterProducts('with-gluten')"
+      >
+        <mat-icon>warning</mat-icon>
+        Products with Gluten
+      </button>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <router-outlet />
+  </main>
+</div>

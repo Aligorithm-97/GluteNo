@@ -1,19 +1,21 @@
-<div>
-  <h1>
-    Angular + Spring Boot + ElasticSearch + Redis + Mongo + Postgres ->
-    Microservice
-  </h1>
-  <app-search-bar (search)="handleSearch($event)"></app-search-bar>
-  <div class="search-container">
-    <input type="text" placeholder="Search..." />
+<div class="product-list-container">
+  <div class="products-grid">
+    <div
+      *ngFor="
+        let product of filteredProducts
+          | paginate : { itemsPerPage: 12, currentPage: page }
+      "
+    >
+      <app-product-card [product]="product"></app-product-card>
+    </div>
   </div>
-  <div
-    *ngFor="
-      let product of filteredProducts
-        | paginate : { itemsPerPage: 10, currentPage: page }
-    "
-  >
-    <app-product-card [product]="product"></app-product-card>
+
+  <div class="pagination-container">
+    <pagination-controls
+      (pageChange)="page = $event"
+      previousLabel="Previous"
+      nextLabel="Next"
+    >
+    </pagination-controls>
   </div>
-  <pagination-controls (pageChange)="page = $event"></pagination-controls>
 </div>

@@ -1,0 +1,243 @@
+.app-container {
+  min-height: 100vh;
+  background-color: var(--background-color);
+  transition: all 0.3s ease;
+}
+
+.main-header {
+  background: var(--surface-color);
+  padding: 16px 32px;
+  box-shadow: 0 2px 8px var(--shadow-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(120px, auto) minmax(280px, 500px) minmax(
+      50px,
+      auto
+    );
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 20px;
+  height: 44px;
+  padding: 0 16px;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.center-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.search-field {
+  width: 100%;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.theme-toggle {
+  transition: all 0.3s ease;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+}
+
+.theme-toggle:hover {
+  transform: rotate(15deg);
+  background-color: var(--button-hover);
+}
+
+.filter-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 0 16px;
+}
+
+.filter-section button {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background-color: var(--surface-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter-section button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.filter-section button.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.filter-section button mat-icon {
+  margin-right: 8px;
+  opacity: 0.8;
+}
+
+.main-content {
+  max-width: 1400px;
+  margin: 32px auto;
+  padding: 0 32px;
+}
+
+/* Material Override Styles */
+::ng-deep .mat-mdc-form-field {
+  background-color: var(--surface-color);
+  height: 44px;
+}
+
+::ng-deep .mat-mdc-text-field-wrapper {
+  background-color: var(--surface-color) !important;
+  border-radius: 22px !important;
+  padding: 0 14px !important;
+  height: 44px !important;
+  margin: 4px 0 !important;
+}
+
+::ng-deep .mat-mdc-form-field-flex {
+  height: 44px !important;
+  align-items: center !important;
+  min-height: 44px !important;
+}
+
+::ng-deep .mat-mdc-form-field-infix {
+  padding: 0 !important;
+  height: 44px !important;
+  min-height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+::ng-deep .mdc-text-field--outlined {
+  height: 44px !important;
+}
+
+::ng-deep .mat-mdc-form-field-icon-suffix {
+  padding-right: 4px;
+  align-self: center !important;
+}
+
+::ng-deep .mat-mdc-input-element {
+  margin-top: 0 !important;
+  padding: 0 !important;
+}
+
+::ng-deep .mat-mdc-form-field-label-wrapper {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+::ng-deep .mat-mdc-form-field-label {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+::ng-deep .mdc-floating-label--float-above {
+  display: none !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .header-content {
+    grid-template-columns: auto 1fr auto;
+    gap: 24px;
+  }
+
+  .main-content {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-header {
+    padding: 16px;
+  }
+
+  .header-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .left-section {
+    justify-content: center;
+  }
+
+  .center-section {
+    order: 2;
+  }
+
+  .right-section {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+
+  .filter-section {
+    grid-template-columns: 1fr;
+    padding: 0 12px;
+  }
+
+  .main-content {
+    padding: 0 16px;
+    margin: 24px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-header {
+    padding: 12px;
+  }
+
+  .header-content {
+    gap: 16px;
+  }
+
+  .filter-section button {
+    padding: 8px 16px;
+    height: 40px;
+  }
+
+  .main-content {
+    padding: 0 12px;
+    margin: 16px auto;
+  }
+}
