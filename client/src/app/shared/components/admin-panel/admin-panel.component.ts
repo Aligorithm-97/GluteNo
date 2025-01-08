@@ -16,6 +16,9 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatCardModule } from "@angular/material/card";
 import { MatChipsModule } from "@angular/material/chips";
 import { MatSnackBar, MatSnackBarModule } from "@angular/material/snack-bar";
+import { MatTooltipModule } from "@angular/material/tooltip";
+import { AuthService } from "../../../core/services/auth.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-admin-panel",
@@ -33,7 +36,9 @@ import { MatSnackBar, MatSnackBarModule } from "@angular/material/snack-bar";
     MatCardModule,
     MatChipsModule,
     MatSnackBarModule,
+    MatTooltipModule,
   ],
+  providers: [AuthService],
   template: `
     <div class="admin-container">
       <mat-card class="admin-card">
@@ -42,6 +47,14 @@ import { MatSnackBar, MatSnackBarModule } from "@angular/material/snack-bar";
           <mat-card-subtitle
             >Fill in the product details below</mat-card-subtitle
           >
+          <button
+            mat-icon-button
+            class="logout-button"
+            (click)="logout()"
+            matTooltip="Logout"
+          >
+            <mat-icon>logout</mat-icon>
+          </button>
         </mat-card-header>
 
         <mat-card-content>
@@ -235,6 +248,12 @@ import { MatSnackBar, MatSnackBarModule } from "@angular/material/snack-bar";
         margin-top: 12px;
       }
 
+      .logout-button {
+        position: absolute;
+        right: 16px;
+        top: 16px;
+      }
+
       @media (max-width: 600px) {
         .admin-container {
           padding: 16px;
@@ -249,35 +268,6 @@ import { MatSnackBar, MatSnackBarModule } from "@angular/material/snack-bar";
           height: 160px;
         }
       }
-
-      /* Description textarea için özel stiller */
-      ::ng-deep .mat-mdc-form-field textarea.mat-mdc-input-element {
-        max-height: 150px;
-        min-height: 100px;
-        resize: vertical;
-        overflow-y: auto;
-        line-height: 1.5;
-        padding: 8px 0;
-      }
-
-      /* Textarea scrollbar stilleri */
-      ::ng-deep textarea::-webkit-scrollbar {
-        width: 8px;
-      }
-
-      ::ng-deep textarea::-webkit-scrollbar-track {
-        background: var(--background-color);
-        border-radius: 4px;
-      }
-
-      ::ng-deep textarea::-webkit-scrollbar-thumb {
-        background: var(--border-color);
-        border-radius: 4px;
-      }
-
-      ::ng-deep textarea::-webkit-scrollbar-thumb:hover {
-        background: var(--secondary-text-color);
-      }
     `,
   ],
 })
@@ -285,7 +275,12 @@ export class AdminPanelComponent {
   productForm: FormGroup;
   imagePreview: string | null = null;
 
-  constructor(private fb: FormBuilder, private snackBar: MatSnackBar) {
+  constructor(
+    private fb: FormBuilder,
+    private snackBar: MatSnackBar,
+    private authService: AuthService,
+    private router: Router
+  ) {
     this.productForm = this.fb.group({
       name: ["", Validators.required],
       category: ["", Validators.required],
@@ -310,7 +305,6 @@ export class AdminPanelComponent {
   onSubmit() {
     if (this.productForm.valid) {
       console.log("Product data:", this.productForm.value);
-      // Burada API'ye gönderme işlemi yapılacak
       this.snackBar.open("Product added successfully!", "Close", {
         duration: 3000,
         horizontalPosition: "end",
@@ -323,5 +317,10 @@ export class AdminPanelComponent {
   resetForm() {
     this.productForm.reset();
     this.imagePreview = null;
+  }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(["/admin/login"]);
   }
 }

@@ -1,10 +1,16 @@
 import { Routes } from "@angular/router";
-import { ProductListComponent } from "./shared/components/product-list/product-list.component";
-import { AdminPanelComponent } from "./shared/components/admin-panel/admin-panel.component";
-import { ProductDetailComponent } from "./shared/components/product-detail/product-detail.component";
 
 export const routes: Routes = [
-  { path: "", component: ProductListComponent },
-  { path: "admin", component: AdminPanelComponent },
-  { path: "product/:id", component: ProductDetailComponent },
+  {
+    path: "",
+    loadChildren: () =>
+      import("./features/products/products.routes").then(
+        (m) => m.PRODUCTS_ROUTES
+      ),
+  },
+  {
+    path: "admin",
+    loadChildren: () =>
+      import("./features/admin/admin.routes").then((m) => m.ADMIN_ROUTES),
+  },
 ];
