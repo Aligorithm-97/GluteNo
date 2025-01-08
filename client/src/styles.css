@@ -27,6 +27,11 @@
   --shadow-color: rgba(0, 0, 0, 0.3);
   --button-hover: rgba(255, 255, 255, 0.08);
   --button-active: rgba(255, 255, 255, 0.16);
+  --pagination-bg: #2d2d2d;
+  --pagination-hover: #3d3d3d;
+  --pagination-active: var(--primary-color);
+  --pagination-text: #ffffff;
+  --pagination-disabled: #666666;
 }
 
 html,
@@ -66,4 +71,132 @@ body {
 
 .mat-mdc-input-element {
   color: var(--text-color) !important;
+}
+
+/* Pagination stilleri */
+::ng-deep .ngx-pagination {
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+::ng-deep .ngx-pagination li {
+  display: inline-block;
+  border-radius: 4px;
+  margin: 0;
+  height: 36px;
+  min-width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-color) !important;
+}
+
+::ng-deep .ngx-pagination a,
+::ng-deep .ngx-pagination .current {
+  padding: 8px 12px;
+  color: var(--text-color) !important;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  background: none !important;
+}
+
+::ng-deep .ngx-pagination a:hover {
+  background-color: var(--button-hover) !important;
+}
+
+::ng-deep .ngx-pagination .current {
+  background: var(--primary-color) !important;
+  color: white !important;
+}
+
+::ng-deep .ngx-pagination .disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+::ng-deep .ngx-pagination .pagination-previous::before,
+::ng-deep .ngx-pagination .pagination-next::after,
+::ng-deep .ngx-pagination .pagination-previous a::before,
+::ng-deep .ngx-pagination .pagination-next a::after {
+  color: var(--text-color) !important;
+}
+
+::ng-deep .ngx-pagination .pagination-previous.disabled::before,
+::ng-deep .ngx-pagination .pagination-next.disabled::after {
+  color: var(--text-color) !important;
+  opacity: 0.5;
+}
+
+/* Dark theme için özel stiller */
+.dark-theme ::ng-deep .ngx-pagination li,
+.dark-theme ::ng-deep .ngx-pagination a,
+.dark-theme ::ng-deep .ngx-pagination .pagination-previous::before,
+.dark-theme ::ng-deep .ngx-pagination .pagination-next::after {
+  color: white !important;
+}
+
+.dark-theme ::ng-deep .ngx-pagination .current {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+}
+
+.dark-theme ::ng-deep .ngx-pagination .disabled {
+  opacity: 0.5;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Material override'lar için ek stiller */
+.dark-theme .mat-mdc-raised-button:not([disabled]) {
+  background-color: var(--surface-color);
+  color: var(--text-color);
+}
+
+.dark-theme .mat-mdc-raised-button.mat-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.dark-theme .mat-mdc-raised-button.mat-accent {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.dark-theme .mat-mdc-raised-button.mat-warn {
+  background-color: var(--warn-color);
+  color: white;
+}
+
+.dark-theme .mat-mdc-form-field-outline {
+  color: var(--border-color);
+}
+
+.dark-theme .mat-mdc-input-element::placeholder {
+  color: var(--secondary-text-color);
+}
+
+.dark-theme .mat-mdc-select-value-text {
+  color: var(--text-color);
+}
+
+.dark-theme .mat-mdc-select-arrow {
+  color: var(--text-color);
+}
+
+.dark-theme .mat-mdc-option {
+  color: var(--text-color);
+}
+
+.dark-theme .mat-mdc-option:hover:not(.mat-mdc-option-disabled) {
+  background-color: var(--button-hover);
+}
+
+.dark-theme .mat-mdc-option.mat-mdc-selected:not(.mat-mdc-option-disabled) {
+  background-color: var(--primary-color);
+  color: white;
 }

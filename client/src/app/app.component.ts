@@ -9,6 +9,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { LogoComponent } from "./shared/components/logo/logo.component";
 import { ThemeService } from "./core/services/theme.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-root",
@@ -33,7 +34,7 @@ export class AppComponent implements OnInit {
   isDarkTheme: boolean = false;
   activeFilter: "all" | "gluten-free" | "with-gluten" = "all";
 
-  constructor(private themeService: ThemeService) {}
+  constructor(private themeService: ThemeService, private router: Router) {}
 
   ngOnInit() {
     this.themeService.isDarkTheme$.subscribe(
@@ -60,5 +61,9 @@ export class AppComponent implements OnInit {
       bubbles: true,
     });
     window.dispatchEvent(event);
+  }
+
+  isAdminRoute(): boolean {
+    return this.router.url.includes("/admin");
   }
 }

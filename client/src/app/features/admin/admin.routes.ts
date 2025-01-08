@@ -4,6 +4,11 @@ import { AdminPanelComponent } from "../../shared/components/admin-panel/admin-p
 import { authGuard } from "../../core/guards/auth.guard";
 
 export const ADMIN_ROUTES: Routes = [
+  { path: "", redirectTo: "login", pathMatch: "full" },
   { path: "login", component: AdminLoginComponent },
-  { path: "", component: AdminPanelComponent, canActivate: [authGuard] },
+  {
+    path: "panel",
+    component: AdminPanelComponent,
+    canActivate: [authGuard],
+  },
 ];

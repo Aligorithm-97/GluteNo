@@ -18,17 +18,20 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  background-color: var(--surface-color);
 }
 
 .product-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px var(--shadow-color);
 }
 
 .product-image {
   height: 200px;
   object-fit: cover;
+  border-radius: 4px 4px 0 0;
 }
 
 mat-card-content {
@@ -36,8 +39,39 @@ mat-card-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 16px;
+}
+
+mat-card-title {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+mat-card-subtitle {
+  font-size: 14px;
+  margin-bottom: 16px;
 }
 
 mat-chip-listbox {
-  margin-top: 10px;
+  margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+  .product-image {
+    height: 180px;
+  }
+
+  mat-card-title {
+    font-size: 16px;
+  }
+
+  mat-card-subtitle {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-image {
+    height: 200px;
+  }
 }

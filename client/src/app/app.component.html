@@ -1,5 +1,5 @@
 <div class="app-container">
-  <header class="main-header">
+  <header class="main-header" *ngIf="!isAdminRoute()">
     <div class="header-content">
       <div class="left-section">
         <app-logo></app-logo>

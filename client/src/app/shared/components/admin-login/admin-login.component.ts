@@ -15,6 +15,7 @@ import { MatCardModule } from "@angular/material/card";
 import { MatSnackBar, MatSnackBarModule } from "@angular/material/snack-bar";
 import { Router } from "@angular/router";
 import { AuthService } from "../../../core/services/auth.service";
+import { LogoComponent } from "../logo/logo.component";
 
 @Component({
   selector: "app-admin-login",
@@ -29,13 +30,15 @@ import { AuthService } from "../../../core/services/auth.service";
     MatIconModule,
     MatCardModule,
     MatSnackBarModule,
+    LogoComponent,
   ],
   template: `
     <div class="login-container">
       <mat-card class="login-card">
-        <mat-card-header>
-          <mat-card-title>Admin Login</mat-card-title>
-        </mat-card-header>
+        <div class="login-header">
+          <app-logo></app-logo>
+          <h2>Admin Panel</h2>
+        </div>
 
         <mat-card-content>
           <form
@@ -45,7 +48,13 @@ import { AuthService } from "../../../core/services/auth.service";
           >
             <mat-form-field appearance="outline">
               <mat-label>Username</mat-label>
-              <input matInput formControlName="username" type="text" />
+              <input
+                matInput
+                formControlName="username"
+                type="text"
+                placeholder="Enter your username"
+              />
+              <mat-icon matPrefix>person</mat-icon>
               <mat-error
                 *ngIf="loginForm.get('username')?.hasError('required')"
               >
@@ -59,7 +68,9 @@ import { AuthService } from "../../../core/services/auth.service";
                 matInput
                 formControlName="password"
                 [type]="hidePassword ? 'password' : 'text'"
+                placeholder="Enter your password"
               />
+              <mat-icon matPrefix>lock</mat-icon>
               <button
                 mat-icon-button
                 matSuffix
@@ -82,7 +93,9 @@ import { AuthService } from "../../../core/services/auth.service";
               color="primary"
               type="submit"
               [disabled]="loginForm.invalid"
+              class="login-button"
             >
+              <mat-icon>login</mat-icon>
               Login
             </button>
           </form>
@@ -93,7 +106,7 @@ import { AuthService } from "../../../core/services/auth.service";
   styles: [
     `
       .login-container {
-        height: 100vh;
+        min-height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -105,21 +118,65 @@ import { AuthService } from "../../../core/services/auth.service";
         width: 100%;
         max-width: 400px;
         background-color: var(--surface-color);
+        border-radius: 12px;
+        box-shadow: 0 4px 20px var(--shadow-color);
+      }
+
+      .login-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 32px 16px 16px;
+        gap: 16px;
+      }
+
+      .login-header h2 {
+        margin: 0;
+        color: var(--text-color);
+        font-weight: 500;
+        font-size: 24px;
       }
 
       .login-form {
         display: flex;
         flex-direction: column;
-        gap: 16px;
-        padding: 20px 0;
+        gap: 24px;
+        padding: 24px;
       }
 
-      mat-card-header {
-        margin-bottom: 16px;
+      mat-form-field {
+        width: 100%;
       }
 
-      mat-card-title {
-        color: var(--text-color);
+      ::ng-deep .mat-mdc-form-field-icon-prefix {
+        padding-right: 12px;
+        color: var(--secondary-text-color);
+      }
+
+      .login-button {
+        height: 48px;
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 16px;
+      }
+
+      .login-button mat-icon {
+        margin-right: 8px;
+      }
+
+      @media (max-width: 480px) {
+        .login-card {
+          max-width: 100%;
+        }
+
+        .login-form {
+          padding: 16px;
+          gap: 16px;
+        }
+
+        .login-header {
+          padding: 24px 16px 8px;
+        }
       }
     `,
   ],
@@ -158,7 +215,7 @@ export class AdminLoginComponent {
           horizontalPosition: "end",
           verticalPosition: "top",
         });
-        this.router.navigate(["/admin"]);
+        this.router.navigate(["/admin/panel"]);
       } else {
         this.snackBar.open("Invalid username or password!", "Close", {
           duration: 3000,

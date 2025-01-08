@@ -97,14 +97,13 @@ import { Router } from "@angular/router";
             </div>
 
             <div class="form-row">
-              <mat-form-field appearance="outline" class="full-width">
+              <mat-form-field appearance="outline">
                 <mat-label>Description</mat-label>
-                <textarea
+                <input
                   matInput
                   formControlName="description"
-                  rows="4"
                   placeholder="Enter product description"
-                ></textarea>
+                />
                 <mat-error
                   *ngIf="productForm.get('description')?.hasError('required')"
                 >
@@ -165,7 +164,7 @@ import { Router } from "@angular/router";
   styles: [
     `
       .admin-container {
-        padding: 24px;
+        padding: 16px;
         max-width: 800px;
         margin: 0 auto;
       }
@@ -178,8 +177,8 @@ import { Router } from "@angular/router";
       .product-form {
         display: flex;
         flex-direction: column;
-        gap: 24px;
-        padding: 24px;
+        gap: 20px;
+        padding: 20px;
       }
 
       .form-row {
@@ -190,22 +189,106 @@ import { Router } from "@angular/router";
         width: 100%;
       }
 
+      /* Description alanı için özel stiller */
+      ::ng-deep .description-field {
+        width: 100% !important;
+      }
+
+      ::ng-deep .description-field .mat-mdc-form-field-flex {
+        background-color: var(--surface-color) !important;
+        border: 1px solid var(--border-color) !important;
+        border-radius: 8px !important;
+        padding: 0 !important;
+      }
+
+      ::ng-deep .description-field .mat-mdc-text-field-wrapper {
+        padding: 0 !important;
+      }
+
+      ::ng-deep .description-field .mat-mdc-form-field-infix {
+        padding: 0 !important;
+        border: none !important;
+      }
+
+      ::ng-deep .description-field textarea.mat-mdc-input-element {
+        padding: 16px !important;
+        min-height: 120px !important;
+        max-height: 200px !important;
+        resize: none !important;
+        margin: 0 !important;
+        border: none !important;
+        background: transparent !important;
+        font-size: 15px !important;
+        line-height: 1.5 !important;
+        color: var(--text-color) !important;
+        box-sizing: border-box !important;
+        width: 100% !important;
+        overflow-y: auto !important;
+      }
+
+      ::ng-deep .description-field .mdc-notched-outline {
+        display: none !important;
+      }
+
+      /* Form alanları için genel stiller */
+      .form-row {
+        margin-bottom: 24px !important;
+        width: 100% !important;
+      }
+
+      .mat-mdc-form-field {
+        width: 100% !important;
+        display: block !important;
+      }
+
+      @media (max-width: 768px) {
+        ::ng-deep .description-field textarea.mat-mdc-input-element {
+          min-height: 100px !important;
+          max-height: 150px !important;
+          font-size: 14px !important;
+          padding: 12px !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        ::ng-deep .description-field textarea.mat-mdc-input-element {
+          min-height: 80px !important;
+          max-height: 120px !important;
+          font-size: 14px !important;
+          padding: 10px !important;
+        }
+      }
+
+      /* Diğer form alanları için stiller */
+      ::ng-deep
+        .mat-mdc-form-field-appearance-outline
+        .mat-mdc-form-field-flex {
+        background-color: var(--surface-color) !important;
+        border: 1px solid var(--border-color) !important;
+        border-radius: 8px !important;
+      }
+
+      ::ng-deep .mat-mdc-form-field-appearance-outline .mdc-notched-outline {
+        display: none !important;
+      }
+
+      /* Image upload alanı için stiller */
       .image-upload {
-        margin: 12px 0;
+        margin: 24px 0 !important;
       }
 
       .upload-container {
-        width: 100%;
-        height: 200px;
-        border: 2px dashed var(--border-color);
-        border-radius: 8px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-        background-color: var(--background-color);
-        overflow: hidden;
+        width: 100% !important;
+        height: 200px !important;
+        border: 2px dashed var(--border-color) !important;
+        border-radius: 8px !important;
+        cursor: pointer !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        transition: all 0.3s ease !important;
+        background-color: var(--background-color) !important;
+        overflow: hidden !important;
       }
 
       .upload-container:hover {
@@ -238,7 +321,7 @@ import { Router } from "@angular/router";
       }
 
       .checkbox-row {
-        margin: 12px 0;
+        margin: 24px 0 !important;
       }
 
       .form-actions {
@@ -254,9 +337,9 @@ import { Router } from "@angular/router";
         top: 16px;
       }
 
-      @media (max-width: 600px) {
+      @media (max-width: 768px) {
         .admin-container {
-          padding: 16px;
+          padding: 12px;
         }
 
         .product-form {
@@ -266,6 +349,29 @@ import { Router } from "@angular/router";
 
         .upload-container {
           height: 160px;
+        }
+
+        ::ng-deep .mat-mdc-form-field textarea.mat-mdc-input-element {
+          min-height: 80px !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .admin-container {
+          padding: 8px;
+        }
+
+        .product-form {
+          padding: 12px;
+          gap: 12px;
+        }
+
+        .form-actions {
+          flex-direction: column;
+        }
+
+        .form-actions button {
+          width: 100%;
         }
       }
     `,
