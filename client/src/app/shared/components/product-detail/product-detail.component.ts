@@ -1,10 +1,13 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { MatCardModule } from "@angular/material/card";
 import { MatChipsModule } from "@angular/material/chips";
 import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { ApiService } from "../../../core/services/api.service";
+import { Product } from "../../interfaces/product.interface";
 
 @Component({
   selector: "app-product-detail",
@@ -15,10 +18,15 @@ import { MatButtonModule } from "@angular/material/button";
     MatChipsModule,
     MatIconModule,
     MatButtonModule,
+    MatProgressSpinnerModule,
   ],
   template: `
     <div class="product-detail-container">
-      <mat-card class="product-detail-card">
+      <div *ngIf="loading" class="loading-spinner">
+        <mat-spinner diameter="40"></mat-spinner>
+      </div>
+
+      <mat-card *ngIf="!loading" class="product-detail-card">
         <mat-card-header>
           <mat-card-title>{{ product.title }}</mat-card-title>
           <mat-card-subtitle>{{ product.subtitle }}</mat-card-subtitle>
@@ -27,7 +35,7 @@ import { MatButtonModule } from "@angular/material/button";
         <img
           mat-card-image
           [src]="product.image"
-          [alt]="product.altText"
+          [alt]="product.title"
           class="product-image"
         />
 
@@ -35,10 +43,10 @@ import { MatButtonModule } from "@angular/material/button";
           <div class="gluten-status">
             <mat-chip-listbox>
               <mat-chip
-                [color]="product.isGlutenFree ? 'accent' : 'warn'"
+                [color]="!product.isGlutenFree ? 'warn' : 'accent'"
                 selected
               >
-                {{ product.isGlutenFree ? "Gluten-Free" : "Contains Gluten" }}
+                {{ !product.isGlutenFree ? "Contains Gluten" : "Gluten-Free" }}
               </mat-chip>
             </mat-chip-listbox>
           </div>
@@ -56,7 +64,7 @@ import { MatButtonModule } from "@angular/material/button";
                 Allergens:
                 {{ product.isGlutenFree ? "No gluten" : "Contains gluten" }}
               </li>
-              <li>Product ID: {{ productId }}</li>
+              <li>Product ID: {{ product.id }}</li>
             </ul>
           </div>
         </mat-card-content>
@@ -67,6 +75,13 @@ import { MatButtonModule } from "@angular/material/button";
           </button>
         </mat-card-actions>
       </mat-card>
+
+      <div *ngIf="error" class="error-message">
+        <p>{{ error }}</p>
+        <button mat-button color="primary" (click)="goBack()">
+          <mat-icon>arrow_back</mat-icon> Back to Products
+        </button>
+      </div>
     </div>
   `,
   styles: [
@@ -112,32 +127,57 @@ import { MatButtonModule } from "@angular/material/button";
       button mat-icon {
         margin-right: 8px;
       }
+
+      .loading-spinner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 300px;
+      }
+
+      .error-message {
+        text-align: center;
+        color: var(--warn-color);
+        padding: 20px;
+      }
     `,
   ],
 })
 export class ProductDetailComponent implements OnInit {
   productId: string = "";
-  product: any = {};
+  product!: Product;
+  loading: boolean = true;
+  error: string | null = null;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private apiService: ApiService
+  ) {}
 
   ngOnInit() {
     this.productId = this.route.snapshot.paramMap.get("id") || "";
-    // Burada gerçek bir API'den ürün detaylarını çekebilirsiniz
-    this.product = {
-      title: `Bread Product ${this.productId}`,
-      subtitle: "Bakery",
-      image: "assets/white.png",
-      altText: "Photo of Bread Product",
-      description:
-        Number(this.productId) % 2 === 0
-          ? "A delicious gluten-free bread option made with the finest ingredients. Perfect for those with gluten sensitivity or celiac disease."
-          : "Traditional bread made with premium wheat flour. Contains gluten and is perfect for those who can enjoy regular bread products.",
-      isGlutenFree: Number(this.productId) % 2 === 0,
-    };
+    this.loadProduct();
+  }
+
+  loadProduct() {
+    this.loading = true;
+    this.error = null;
+
+    this.apiService.getProductById(this.productId).subscribe({
+      next: (product) => {
+        this.product = product;
+        this.loading = false;
+      },
+      error: (error) => {
+        console.error("Error loading product:", error);
+        this.error = "Product not found or an error occurred.";
+        this.loading = false;
+      },
+    });
   }
 
   goBack() {
-    window.history.back();
+    this.router.navigate(["/"]); // Ana sayfaya dön
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { ProductCardComponent } from "../product-card/product-card.component";
@@ -10,6 +10,8 @@ import { MatIconModule } from "@angular/material/icon";
 import { ApiService } from "../../../core/services/api.service";
 import { Product } from "../../interfaces/product.interface";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { Subject, Subscription } from "rxjs";
+import { debounceTime, distinctUntilChanged } from "rxjs/operators";
 
 @Component({
   selector: "app-product-list",
@@ -32,14 +34,13 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
       </div>
 
       <div *ngIf="!loading" class="products-grid">
-        <div
+        <app-product-card
           *ngFor="
             let product of filteredProducts
               | paginate : { itemsPerPage: 12, currentPage: page }
           "
-        >
-          <app-product-card [product]="product"></app-product-card>
-        </div>
+          [product]="product"
+        ></app-product-card>
       </div>
 
       <div
@@ -62,30 +63,24 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
       </div>
     </div>
   `,
-  styles: [
-    `
-      .loading-spinner {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 300px;
-      }
-
-      .no-products {
-        text-align: center;
-        padding: 32px;
-        color: var(--secondary-text-color);
-      }
-    `,
-  ],
+  styleUrls: ["./product-list.component.css"],
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent implements OnInit, OnDestroy {
   products: Product[] = [];
   filteredProducts: Product[] = [];
   page: number = 1;
   loading: boolean = true;
 
-  constructor(private apiService: ApiService) {}
+  private searchSubject = new Subject<string>();
+  private searchSubscription: Subscription;
+
+  constructor(private apiService: ApiService) {
+    this.searchSubscription = this.searchSubject
+      .pipe(debounceTime(1000), distinctUntilChanged())
+      .subscribe((searchTerm) => {
+        this.performSearch(searchTerm);
+      });
+  }
 
   ngOnInit() {
     this.loadProducts();
@@ -95,8 +90,14 @@ export class ProductListComponent implements OnInit {
     }) as EventListener);
 
     window.addEventListener("searchProducts", ((event: CustomEvent) => {
-      this.handleSearch(event.detail);
+      this.searchSubject.next(event.detail);
     }) as EventListener);
+  }
+
+  ngOnDestroy() {
+    if (this.searchSubscription) {
+      this.searchSubscription.unsubscribe();
+    }
   }
 
   loadProducts() {
@@ -130,9 +131,11 @@ export class ProductListComponent implements OnInit {
         });
         break;
       case "gluten-free":
-        this.apiService.getGlutenFreeProducts().subscribe({
+        this.apiService.getProducts().subscribe({
           next: (products) => {
-            this.filteredProducts = products;
+            this.filteredProducts = products.filter(
+              (product) => product.isGlutenFree
+            );
             this.loading = false;
           },
           error: (error) => {
@@ -142,9 +145,11 @@ export class ProductListComponent implements OnInit {
         });
         break;
       case "with-gluten":
-        this.apiService.getGlutenProducts().subscribe({
+        this.apiService.getProducts().subscribe({
           next: (products) => {
-            this.filteredProducts = products;
+            this.filteredProducts = products.filter(
+              (product) => !product.isGlutenFree
+            );
             this.loading = false;
           },
           error: (error) => {
@@ -157,14 +162,23 @@ export class ProductListComponent implements OnInit {
     this.page = 1;
   }
 
-  handleSearch(searchTerm: string) {
+  private performSearch(searchTerm: string) {
     this.loading = true;
     if (!searchTerm.trim()) {
       this.loadProducts();
     } else {
-      this.apiService.searchProducts(searchTerm).subscribe({
+      this.apiService.getProducts().subscribe({
         next: (products) => {
-          this.filteredProducts = products;
+          this.filteredProducts = products.filter(
+            (product) =>
+              product.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+              product.subtitle
+                ?.toLowerCase()
+                .includes(searchTerm.toLowerCase()) ||
+              product.description
+                ?.toLowerCase()
+                .includes(searchTerm.toLowerCase())
+          );
           this.loading = false;
         },
         error: (error) => {

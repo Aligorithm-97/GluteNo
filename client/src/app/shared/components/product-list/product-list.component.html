@@ -1,13 +1,12 @@
 <div class="product-list-container">
   <div class="products-grid">
-    <div
+    <app-product-card
       *ngFor="
         let product of filteredProducts
           | paginate : { itemsPerPage: 12, currentPage: page }
       "
-    >
-      <app-product-card [product]="product"></app-product-card>
-    </div>
+      [product]="product"
+    ></app-product-card>
   </div>
 
   <div class="pagination-container">
