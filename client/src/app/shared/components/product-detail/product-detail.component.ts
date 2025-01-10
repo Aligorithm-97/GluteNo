@@ -64,7 +64,6 @@ import { Product } from "../../interfaces/product.interface";
                 Allergens:
                 {{ product.isGlutenFree ? "No gluten" : "Contains gluten" }}
               </li>
-              <li>Product ID: {{ product.id }}</li>
             </ul>
           </div>
         </mat-card-content>

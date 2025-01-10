@@ -83,10 +83,22 @@ import { Router } from "@angular/router";
               <mat-form-field appearance="outline">
                 <mat-label>Category</mat-label>
                 <mat-select formControlName="category">
-                  <mat-option value="bread">Bread</mat-option>
-                  <mat-option value="pastry">Pastry</mat-option>
-                  <mat-option value="snacks">Snacks</mat-option>
-                  <mat-option value="desserts">Desserts</mat-option>
+                  <mat-option value="bread">Bread & Bakery</mat-option>
+                  <mat-option value="pastry">Pastries & Sweets</mat-option>
+                  <mat-option value="snacks">Snacks & Crackers</mat-option>
+                  <mat-option value="pasta">Pasta & Noodles</mat-option>
+                  <mat-option value="breakfast">Breakfast Foods</mat-option>
+                  <mat-option value="flour">Flour & Baking Mixes</mat-option>
+                  <mat-option value="cereals">Cereals & Granola</mat-option>
+                  <mat-option value="cookies">Cookies & Biscuits</mat-option>
+                  <mat-option value="bars">Energy & Protein Bars</mat-option>
+                  <mat-option value="pizza">Pizza & Ready Meals</mat-option>
+                  <mat-option value="sauces">Sauces & Condiments</mat-option>
+                  <mat-option value="beverages">Beverages</mat-option>
+                  <mat-option value="frozen">Frozen Foods</mat-option>
+                  <mat-option value="dairy">Dairy Alternatives</mat-option>
+                  <mat-option value="supplements">Supplements</mat-option>
+                  <mat-option value="other">Other</mat-option>
                 </mat-select>
                 <mat-error
                   *ngIf="productForm.get('category')?.hasError('required')"
@@ -99,11 +111,12 @@ import { Router } from "@angular/router";
             <div class="form-row">
               <mat-form-field appearance="outline">
                 <mat-label>Description</mat-label>
-                <input
+                <textarea
                   matInput
                   formControlName="description"
                   placeholder="Enter product description"
-                />
+                  rows="4"
+                ></textarea>
                 <mat-error
                   *ngIf="productForm.get('description')?.hasError('required')"
                 >
@@ -112,29 +125,26 @@ import { Router } from "@angular/router";
               </mat-form-field>
             </div>
 
-            <div class="form-row image-upload">
-              <div
-                class="upload-container"
-                (click)="fileInput.click()"
-                [class.has-image]="imagePreview"
-              >
+            <div class="form-row">
+              <mat-form-field appearance="outline">
+                <mat-label>Image URL</mat-label>
                 <input
-                  #fileInput
-                  type="file"
-                  (change)="onImageSelected($event)"
-                  accept="image/*"
-                  hidden
+                  matInput
+                  formControlName="image"
+                  placeholder="Enter image URL"
+                  (input)="onImageUrlChange($event)"
                 />
-                <div class="upload-content" *ngIf="!imagePreview">
-                  <mat-icon>cloud_upload</mat-icon>
-                  <span>Click to upload product image</span>
-                </div>
-                <img
-                  *ngIf="imagePreview"
-                  [src]="imagePreview"
-                  alt="Product preview"
-                />
-              </div>
+                <mat-icon matSuffix>image</mat-icon>
+                <mat-error
+                  *ngIf="productForm.get('image')?.hasError('required')"
+                >
+                  Image URL is required
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="image-preview" *ngIf="imagePreview">
+              <img [src]="imagePreview" alt="Product preview" />
             </div>
 
             <div class="form-row checkbox-row">
@@ -374,6 +384,21 @@ import { Router } from "@angular/router";
           width: 100%;
         }
       }
+
+      .image-preview {
+        width: 100%;
+        height: 200px;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        overflow: hidden;
+        margin: 16px 0;
+      }
+
+      .image-preview img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
     `,
   ],
 })
@@ -391,20 +416,17 @@ export class AdminPanelComponent {
       name: ["", Validators.required],
       category: ["", Validators.required],
       description: ["", Validators.required],
+      image: ["", Validators.required],
       isGlutenFree: [false],
-      image: [null],
     });
   }
 
-  onImageSelected(event: Event) {
-    const file = (event.target as HTMLInputElement).files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        this.imagePreview = reader.result as string;
-        this.productForm.patchValue({ image: file });
-      };
-      reader.readAsDataURL(file);
+  onImageUrlChange(event: Event) {
+    const url = (event.target as HTMLInputElement).value;
+    if (url) {
+      this.imagePreview = url;
+    } else {
+      this.imagePreview = null;
     }
   }
 
