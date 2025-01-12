@@ -1,0 +1,947 @@
+[
+  {
+    "title": "Quinoa Bread",
+    "subtitle": "Gluten-Free Artisan Bread",
+    "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff",
+    "isGlutenFree": true,
+    "description": "Artisanal bread made with organic quinoa flour, perfect for sandwiches and toast."
+  },
+  {
+    "title": "Almond Flour Cookies",
+    "subtitle": "Sweet Gluten-Free Treats",
+    "image": "https://images.unsplash.com/photo-1499636136210-6f4ee915583e",
+    "isGlutenFree": true,
+    "description": "Delicious cookies made with premium almond flour and organic honey."
+  },
+  {
+    "title": "Chestnut Flour Bread",
+    "subtitle": "Turkish Gluten-Free Bread",
+    "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff",
+    "isGlutenFree": true,
+    "description": "Gluten-free bread made with Turkish chestnut flour."
+  },
+  {
+    "title": "Rice with Chickpeas",
+    "subtitle": "Turkish Rice Dish",
+    "image": "https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6",
+    "isGlutenFree": true,
+    "description": "Traditional Turkish rice with chickpeas and herbs."
+  },
+  {
+    "title": "Lentil Balls",
+    "subtitle": "Turkish Appetizer",
+    "image": "https://images.unsplash.com/photo-1585437631855-70f1c8b7eea5",
+    "isGlutenFree": true,
+    "description": "Spiced red lentil balls with bulgur and herbs."
+  },
+  {
+    "title": "Cornbread",
+    "subtitle": "Black Sea Style Bread",
+    "image": "https://images.unsplash.com/photo-1586444248902-2f64eddc13df",
+    "isGlutenFree": true,
+    "description": "Traditional Black Sea region corn bread."
+  },
+  {
+    "title": "Borek",
+    "subtitle": "Turkish Layered Pastry",
+    "image": "https://images.unsplash.com/photo-1584539696499-bff0b4768e4e",
+    "isGlutenFree": false,
+    "description": "Traditional Turkish pastry with various fillings."
+  },
+  {
+    "title": "Chickpea Flour Cake",
+    "subtitle": "Turkish Gluten-Free Cake",
+    "image": "https://images.unsplash.com/photo-1557979619-445218f326b9",
+    "isGlutenFree": true,
+    "description": "Moist cake made with chickpea flour and natural sweeteners."
+  },
+  {
+    "title": "Rice Flour Halva",
+    "subtitle": "Turkish Sweet Dessert",
+    "image": "https://images.unsplash.com/photo-1515037893149-de7f840978e2",
+    "isGlutenFree": true,
+    "description": "Traditional Turkish dessert made with rice flour."
+  },
+  {
+    "title": "White Bean Stew",
+    "subtitle": "Turkish Bean Dish",
+    "image": "https://images.unsplash.com/photo-1546549032-9571cd6b27df",
+    "isGlutenFree": true,
+    "description": "Classic Turkish white bean stew."
+  },
+  {
+    "title": "Potato Patties",
+    "subtitle": "Turkish Style Croquettes",
+    "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd",
+    "isGlutenFree": true,
+    "description": "Turkish style potato patties with herbs."
+  },
+  {
+    "title": "Zucchini Fritters",
+    "subtitle": "Turkish Vegetable Patties",
+    "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38",
+    "isGlutenFree": true,
+    "description": "Turkish style zucchini fritters made with chickpea flour."
+  },
+  {
+    "title": "Wheat and Meat Stew",
+    "subtitle": "Traditional Turkish Stew",
+    "image": "https://images.unsplash.com/photo-1547928576-a4a2bc099796",
+    "isGlutenFree": false,
+    "description": "Traditional Turkish meat and wheat stew."
+  },
+  {
+    "title": "Sütlaç",
+    "subtitle": "Turkish Rice Pudding",
+    "image": "https://images.unsplash.com/photo-1587314168485-3236d6710814",
+    "isGlutenFree": true,
+    "description": "Traditional Turkish baked rice pudding with vanilla."
+  },
+  {
+    "title": "Stuffed Grape Leaves",
+    "subtitle": "Mediterranean Appetizer",
+    "image": "https://images.unsplash.com/photo-1587487247435-23de288e3426",
+    "isGlutenFree": true,
+    "description": "Grape leaves stuffed with rice and herbs."
+  },
+  {
+    "title": "Bean Salad",
+    "subtitle": "Turkish Cold Appetizer",
+    "image": "https://images.unsplash.com/photo-1594282486552-05b4d80fbb9f",
+    "isGlutenFree": true,
+    "description": "Mixed bean salad with olive oil and herbs."
+  },
+  {
+    "title": "Hummus",
+    "subtitle": "Middle Eastern Dip",
+    "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe",
+    "isGlutenFree": true,
+    "description": "Creamy chickpea dip with tahini and olive oil."
+  },
+  {
+    "title": "Lentil Soup",
+    "subtitle": "Turkish Red Lentil Soup",
+    "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd",
+    "isGlutenFree": true,
+    "description": "Classic Turkish red lentil soup."
+  },
+  {
+    "title": "Manti",
+    "subtitle": "Turkish Dumplings",
+    "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950",
+    "isGlutenFree": false,
+    "description": "Traditional Turkish dumplings filled with meat."
+  },
+  {
+    "title": "Bulgur Pilaf",
+    "subtitle": "Turkish Grain Dish",
+    "image": "https://images.unsplash.com/photo-1546549032-9571cd6b27df",
+    "isGlutenFree": false,
+    "description": "Classic Turkish bulgur wheat pilaf with vegetables."
+  },
+  {
+    "title": "Cauliflower Rice",
+    "subtitle": "Low-Carb Rice Alternative",
+    "image": "https://images.unsplash.com/photo-1510020553968-30f966e1ec9e",
+    "isGlutenFree": true,
+    "description": "Modern healthy alternative to traditional rice."
+  },
+  {
+    "title": "Pizza Margherita",
+    "subtitle": "Classic Italian Pizza",
+    "image": "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca",
+    "isGlutenFree": false,
+    "description": "Traditional Italian pizza with tomatoes and mozzarella."
+  },
+  {
+    "title": "Cauliflower Pizza",
+    "subtitle": "Gluten-Free Pizza Base",
+    "image": "https://images.unsplash.com/photo-1585238342024-78d387f4a707",
+    "isGlutenFree": true,
+    "description": "Modern pizza made with cauliflower crust."
+  },
+  {
+    "title": "Hamburger",
+    "subtitle": "American Classic",
+    "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd",
+    "isGlutenFree": false,
+    "description": "Classic American burger with wheat bun."
+  },
+  {
+    "title": "Lettuce Wrap Burger",
+    "subtitle": "Gluten-Free Burger",
+    "image": "https://images.unsplash.com/photo-1565299507177-b0ac66763828",
+    "isGlutenFree": true,
+    "description": "Burger wrapped in lettuce instead of bun."
+  },
+  {
+    "title": "Sushi Rolls",
+    "subtitle": "Japanese Rice Rolls",
+    "image": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c",
+    "isGlutenFree": true,
+    "description": "Traditional Japanese sushi rolls made with rice."
+  },
+  {
+    "title": "Paella",
+    "subtitle": "Spanish Rice Dish",
+    "image": "https://images.unsplash.com/photo-1534080564583-6be75777b70a",
+    "isGlutenFree": true,
+    "description": "Classic Spanish rice dish with seafood and saffron."
+  },
+  {
+    "title": "Croissant",
+    "subtitle": "French Pastry",
+    "image": "https://images.unsplash.com/photo-1555507036-ab1f4038808a",
+    "isGlutenFree": false,
+    "description": "Traditional French butter croissant."
+  },
+  {
+    "title": "Ratatouille",
+    "subtitle": "French Vegetable Dish",
+    "image": "https://images.unsplash.com/photo-1572453800999-e8d2d1589b7c",
+    "isGlutenFree": true,
+    "description": "Classic French vegetable stew."
+  },
+  {
+    "title": "Schnitzel",
+    "subtitle": "Austrian Breaded Cutlet",
+    "image": "https://images.unsplash.com/photo-1599921841143-819065a55cc6",
+    "isGlutenFree": false,
+    "description": "Traditional Austrian breaded meat cutlet."
+  },
+  {
+    "title": "Grilled Chicken",
+    "subtitle": "Protein Main Course",
+    "image": "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b",
+    "isGlutenFree": true,
+    "description": "Simple grilled chicken with herbs."
+  },
+  {
+    "title": "Fish and Chips",
+    "subtitle": "British Classic",
+    "image": "https://images.unsplash.com/photo-1579208575657-c595a05383b7",
+    "isGlutenFree": false,
+    "description": "Traditional British battered fish with fries."
+  },
+  {
+    "title": "Grilled Fish",
+    "subtitle": "Healthy Fish Dish",
+    "image": "https://images.unsplash.com/photo-1580476262798-bddd9f4b7369",
+    "isGlutenFree": true,
+    "description": "Simple grilled fish with lemon and herbs."
+  },
+  {
+    "title": "Pad Thai",
+    "subtitle": "Thai Rice Noodles",
+    "image": "https://images.unsplash.com/photo-1559314809-0d155014e29e",
+    "isGlutenFree": true,
+    "description": "Classic Thai stir-fried rice noodles with vegetables."
+  },
+  {
+    "title": "Pho",
+    "subtitle": "Vietnamese Rice Noodle Soup",
+    "image": "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43",
+    "isGlutenFree": true,
+    "description": "Traditional Vietnamese soup with rice noodles."
+  },
+  {
+    "title": "Risotto",
+    "subtitle": "Italian Rice Dish",
+    "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141",
+    "isGlutenFree": true,
+    "description": "Creamy Italian rice dish with parmesan."
+  },
+  {
+    "title": "Gnocchi",
+    "subtitle": "Italian Potato Dumplings",
+    "image": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9",
+    "isGlutenFree": false,
+    "description": "Traditional Italian potato dumplings with wheat flour."
+  },
+  {
+    "title": "Sweet Potato Gnocchi",
+    "subtitle": "Gluten-Free Gnocchi",
+    "image": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9",
+    "isGlutenFree": true,
+    "description": "Modern gluten-free version made with sweet potatoes."
+  },
+  {
+    "title": "Churros",
+    "subtitle": "Spanish Fried Pastry",
+    "image": "https://images.unsplash.com/photo-1581911823256-694b27332788",
+    "isGlutenFree": false,
+    "description": "Traditional Spanish fried dough pastry."
+  },
+  {
+    "title": "Falafel",
+    "subtitle": "Middle Eastern Fritters",
+    "image": "https://images.unsplash.com/photo-1593001874117-c99c800e3eb7",
+    "isGlutenFree": true,
+    "description": "Deep-fried chickpea balls with herbs and spices."
+  },
+  {
+    "title": "Greek Salad",
+    "subtitle": "Mediterranean Fresh Salad",
+    "image": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe",
+    "isGlutenFree": true,
+    "description": "Fresh salad with feta cheese, olives, and vegetables."
+  },
+  {
+    "title": "Caesar Salad",
+    "subtitle": "Classic American Salad",
+    "image": "https://images.unsplash.com/photo-1550304943-4f24f54ddde9",
+    "isGlutenFree": false,
+    "description": "Traditional salad with croutons and Caesar dressing."
+  },
+  {
+    "title": "Tiramisu",
+    "subtitle": "Italian Coffee Dessert",
+    "image": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9",
+    "isGlutenFree": false,
+    "description": "Classic Italian dessert with coffee-soaked ladyfingers."
+  },
+  {
+    "title": "Chocolate Mousse",
+    "subtitle": "French Dessert",
+    "image": "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e",
+    "isGlutenFree": true,
+    "description": "Light and airy French chocolate dessert."
+  },
+  {
+    "title": "Apple Strudel",
+    "subtitle": "Austrian Pastry",
+    "image": "https://images.unsplash.com/photo-1568571780765-9276ac8b75a9",
+    "isGlutenFree": false,
+    "description": "Traditional Austrian apple-filled pastry."
+  },
+  {
+    "title": "Baked Apple",
+    "subtitle": "Gluten-Free Dessert",
+    "image": "https://images.unsplash.com/photo-1568571780765-9276ac8b75a9",
+    "isGlutenFree": true,
+    "description": "Simple baked apple with cinnamon and nuts."
+  },
+  {
+    "title": "Beef Stir Fry",
+    "subtitle": "Asian Style Dish",
+    "image": "https://images.unsplash.com/photo-1567529684892-09290a1b2d05",
+    "isGlutenFree": true,
+    "description": "Stir-fried beef with vegetables and rice."
+  },
+  {
+    "title": "Chicken Curry",
+    "subtitle": "Indian Style Curry",
+    "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641",
+    "isGlutenFree": true,
+    "description": "Spicy Indian curry with tender chicken."
+  },
+  {
+    "title": "Mac and Cheese",
+    "subtitle": "American Comfort Food",
+    "image": "https://images.unsplash.com/photo-1543339494-b4cd4f7ba686",
+    "isGlutenFree": false,
+    "description": "Classic American macaroni and cheese."
+  },
+  {
+    "title": "Cauliflower Mac",
+    "subtitle": "Gluten-Free Mac Alternative",
+    "image": "https://images.unsplash.com/photo-1543339494-b4cd4f7ba686",
+    "isGlutenFree": true,
+    "description": "Cauliflower based mac and cheese alternative."
+  },
+  {
+    "title": "Hot Dog",
+    "subtitle": "American Street Food",
+    "image": "https://images.unsplash.com/photo-1596649299486-4cdea56fd59d",
+    "isGlutenFree": false,
+    "description": "Classic hot dog with wheat bun."
+  },
+  {
+    "title": "Naked Hot Dog",
+    "subtitle": "Gluten-Free Hot Dog",
+    "image": "https://images.unsplash.com/photo-1596649299486-4cdea56fd59d",
+    "isGlutenFree": true,
+    "description": "Hot dog without bun, served with toppings."
+  },
+  {
+    "title": "Club Sandwich",
+    "subtitle": "American Classic Sandwich",
+    "image": "https://images.unsplash.com/photo-1528735602780-2552fd46c7af",
+    "isGlutenFree": false,
+    "description": "Triple-decker sandwich with chicken, bacon, and vegetables."
+  },
+  {
+    "title": "Chicken Wrap",
+    "subtitle": "Gluten-Free Wrap",
+    "image": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f",
+    "isGlutenFree": true,
+    "description": "Chicken wrap with lettuce instead of tortilla."
+  },
+  {
+    "title": "Penne Arrabbiata",
+    "subtitle": "Italian Pasta Dish",
+    "image": "https://images.unsplash.com/photo-1608897013039-887f21d8c804",
+    "isGlutenFree": false,
+    "description": "Spicy Italian pasta with tomato sauce."
+  },
+  {
+    "title": "Zucchini Noodles",
+    "subtitle": "Low-Carb Pasta Alternative",
+    "image": "https://images.unsplash.com/photo-1556761223-4c4282c73f77",
+    "isGlutenFree": true,
+    "description": "Spiralized zucchini noodles with tomato sauce."
+  },
+  {
+    "title": "French Toast",
+    "subtitle": "Classic Breakfast",
+    "image": "https://images.unsplash.com/photo-1484723091739-30a097e8f929",
+    "isGlutenFree": false,
+    "description": "Traditional French toast with maple syrup."
+  },
+  {
+    "title": "Kumpir",
+    "subtitle": "Turkish Baked Potato",
+    "image": "https://images.unsplash.com/photo-1510420877420-6cda9a09d349",
+    "isGlutenFree": true,
+    "description": "Loaded baked potato with various toppings."
+  },
+  {
+    "title": "Chicken Schwarma",
+    "subtitle": "Middle Eastern Wrap",
+    "image": "https://images.unsplash.com/photo-1561651823-34feb02250e4",
+    "isGlutenFree": false,
+    "description": "Grilled chicken wrap with Middle Eastern spices."
+  },
+  {
+    "title": "Chicken Kebab Plate",
+    "subtitle": "Turkish Grilled Chicken",
+    "image": "https://images.unsplash.com/photo-1603360946369-dc9bb6258143",
+    "isGlutenFree": true,
+    "description": "Grilled chicken kebab served with rice and salad."
+  },
+  {
+    "title": "Beef Lasagna",
+    "subtitle": "Italian Pasta Dish",
+    "image": "https://images.unsplash.com/photo-1574894709920-11b28e7367e3",
+    "isGlutenFree": false,
+    "description": "Traditional Italian lasagna with beef and cheese."
+  },
+  {
+    "title": "Eggplant Lasagna",
+    "subtitle": "Low-Carb Alternative",
+    "image": "https://images.unsplash.com/photo-1574894709920-11b28e7367e3",
+    "isGlutenFree": true,
+    "description": "Lasagna made with eggplant instead of pasta."
+  },
+  {
+    "title": "Chicken Nuggets",
+    "subtitle": "Fast Food Classic",
+    "image": "https://images.unsplash.com/photo-1562967914-608f82629710",
+    "isGlutenFree": false,
+    "description": "Breaded chicken nuggets with dipping sauce."
+  },
+  {
+    "title": "Chicken Parmesan",
+    "subtitle": "Italian-American Classic",
+    "image": "https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8",
+    "isGlutenFree": false,
+    "description": "Breaded chicken cutlet with tomato sauce and melted cheese."
+  },
+  {
+    "title": "Grilled Chicken Parmesan",
+    "subtitle": "Gluten-Free Version",
+    "image": "https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8",
+    "isGlutenFree": true,
+    "description": "Grilled chicken with tomato sauce and melted cheese, no breading."
+  },
+  {
+    "title": "Chicken Alfredo",
+    "subtitle": "Italian-American Pasta",
+    "image": "https://images.unsplash.com/photo-1645112411341-6c4fd023714a",
+    "isGlutenFree": false,
+    "description": "Fettuccine pasta in creamy Alfredo sauce with chicken."
+  },
+  {
+    "title": "Zucchini Alfredo",
+    "subtitle": "Low-Carb Pasta Alternative",
+    "image": "https://images.unsplash.com/photo-1645112411341-6c4fd023714a",
+    "isGlutenFree": true,
+    "description": "Zucchini noodles in creamy Alfredo sauce with chicken."
+  },
+  {
+    "title": "BBQ Ribs",
+    "subtitle": "American BBQ Classic",
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947",
+    "isGlutenFree": true,
+    "description": "Slow-cooked pork ribs with BBQ sauce."
+  },
+  {
+    "title": "Philly Cheesesteak",
+    "subtitle": "American Sandwich",
+    "image": "https://images.unsplash.com/photo-1600628421055-4d30de868b8f",
+    "isGlutenFree": false,
+    "description": "Classic Philadelphia sandwich with beef and melted cheese."
+  },
+  {
+    "title": "Cheesesteak Bowl",
+    "subtitle": "Low-Carb Alternative",
+    "image": "https://images.unsplash.com/photo-1600628421055-4d30de868b8f",
+    "isGlutenFree": true,
+    "description": "Philly cheesesteak ingredients served in a bowl without bread."
+  },
+  {
+    "title": "Chicken Wings",
+    "subtitle": "American Bar Food",
+    "image": "https://images.unsplash.com/photo-1608039858788-667850f129d3",
+    "isGlutenFree": true,
+    "description": "Classic buffalo wings with blue cheese dressing."
+  },
+  {
+    "title": "Meatballs",
+    "subtitle": "Italian-American Classic",
+    "image": "https://images.unsplash.com/photo-1515516969-d4008cc6241a",
+    "isGlutenFree": false,
+    "description": "Traditional meatballs with breadcrumbs and herbs."
+  },
+  {
+    "title": "Gluten-Free Meatballs",
+    "subtitle": "Modified Classic",
+    "image": "https://images.unsplash.com/photo-1515516969-d4008cc6241a",
+    "isGlutenFree": true,
+    "description": "Meatballs made with gluten-free breadcrumbs."
+  },
+  {
+    "title": "French Fries",
+    "subtitle": "Classic Side Dish",
+    "image": "https://images.unsplash.com/photo-1573080496219-bb080dd4f877",
+    "isGlutenFree": true,
+    "description": "Crispy potato fries seasoned with salt."
+  },
+  {
+    "title": "Onion Rings",
+    "subtitle": "Breaded Side Dish",
+    "image": "https://images.unsplash.com/photo-1639024471283-03518883512d",
+    "isGlutenFree": false,
+    "description": "Battered and fried onion rings."
+  },
+  {
+    "title": "Grilled Vegetables",
+    "subtitle": "Healthy Side Dish",
+    "image": "https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38",
+    "isGlutenFree": true,
+    "description": "Assorted vegetables grilled with olive oil."
+  },
+  {
+    "title": "Pancakes",
+    "subtitle": "American Breakfast",
+    "image": "https://images.unsplash.com/photo-1506084868230-bb9d95c24759",
+    "isGlutenFree": false,
+    "description": "Classic fluffy pancakes with maple syrup."
+  },
+  {
+    "title": "Almond Flour Pancakes",
+    "subtitle": "Gluten-Free Breakfast",
+    "image": "https://images.unsplash.com/photo-1506084868230-bb9d95c24759",
+    "isGlutenFree": true,
+    "description": "Pancakes made with almond flour and natural sweeteners."
+  },
+  {
+    "title": "Eggs Benedict",
+    "subtitle": "Classic Breakfast Dish",
+    "image": "https://images.unsplash.com/photo-1608039728275-13400d7b0b77",
+    "isGlutenFree": false,
+    "description": "Poached eggs and ham on English muffins with hollandaise sauce."
+  },
+  {
+    "title": "Eggs Florentine",
+    "subtitle": "Gluten-Free Breakfast",
+    "image": "https://images.unsplash.com/photo-1608039728275-13400d7b0b77",
+    "isGlutenFree": true,
+    "description": "Poached eggs on spinach without English muffins."
+  },
+  {
+    "title": "Beef Wellington",
+    "subtitle": "British Luxury Dish",
+    "image": "https://images.unsplash.com/photo-1600891964092-4316c288032e",
+    "isGlutenFree": false,
+    "description": "Beef tenderloin wrapped in pastry with mushroom duxelles."
+  },
+  {
+    "title": "Beef Tenderloin",
+    "subtitle": "Gluten-Free Main Course",
+    "image": "https://images.unsplash.com/photo-1600891964092-4316c288032e",
+    "isGlutenFree": true,
+    "description": "Roasted beef tenderloin with mushroom sauce."
+  },
+  {
+    "title": "Chicken Pot Pie",
+    "subtitle": "American Comfort Food",
+    "image": "https://images.unsplash.com/photo-1587248720327-8eb72564be1e",
+    "isGlutenFree": false,
+    "description": "Creamy chicken and vegetables in pastry crust."
+  },
+  {
+    "title": "Chicken and Vegetable Stew",
+    "subtitle": "Gluten-Free Alternative",
+    "image": "https://images.unsplash.com/photo-1587248720327-8eb72564be1e",
+    "isGlutenFree": true,
+    "description": "Creamy chicken and vegetables without pastry."
+  },
+  {
+    "title": "Shepherd's Pie",
+    "subtitle": "British Comfort Food",
+    "image": "https://images.unsplash.com/photo-1597289124948-688c1a35cb48",
+    "isGlutenFree": true,
+    "description": "Ground lamb topped with mashed potatoes."
+  },
+  {
+    "title": "Cottage Pie",
+    "subtitle": "British Classic",
+    "image": "https://images.unsplash.com/photo-1597289124948-688c1a35cb48",
+    "isGlutenFree": true,
+    "description": "Ground beef topped with mashed potatoes."
+  },
+  {
+    "title": "Beef Stroganoff",
+    "subtitle": "Russian Classic",
+    "image": "https://images.unsplash.com/photo-1534939561126-855b8675edd7",
+    "isGlutenFree": false,
+    "description": "Beef in creamy mushroom sauce served with egg noodles."
+  },
+  {
+    "title": "Mushroom Stroganoff",
+    "subtitle": "Vegetarian Alternative",
+    "image": "https://images.unsplash.com/photo-1534939561126-855b8675edd7",
+    "isGlutenFree": true,
+    "description": "Mushrooms in creamy sauce served with rice."
+  },
+  {
+    "title": "Chicken Kiev",
+    "subtitle": "Ukrainian Classic",
+    "image": "https://images.unsplash.com/photo-1585325701956-60dd9c8553bc",
+    "isGlutenFree": false,
+    "description": "Breaded chicken breast filled with herb butter."
+  },
+  {
+    "title": "Grilled Chicken Kiev",
+    "subtitle": "Gluten-Free Version",
+    "image": "https://images.unsplash.com/photo-1585325701956-60dd9c8553bc",
+    "isGlutenFree": true,
+    "description": "Chicken breast filled with herb butter, no breading."
+  },
+  {
+    "title": "Beef Bourguignon",
+    "subtitle": "French Classic",
+    "image": "https://images.unsplash.com/photo-1534939561126-855b8675edd7",
+    "isGlutenFree": true,
+    "description": "Beef stewed in red wine with mushrooms and pearl onions."
+  },
+  {
+    "title": "Coq au Vin",
+    "subtitle": "French Chicken Dish",
+    "image": "https://images.unsplash.com/photo-1585325701956-60dd9c8553bc",
+    "isGlutenFree": true,
+    "description": "Chicken braised in wine with mushrooms and bacon."
+  },
+  {
+    "title": "Swedish Meatballs",
+    "subtitle": "Scandinavian Classic",
+    "image": "https://images.unsplash.com/photo-1515516969-d4008cc6241a",
+    "isGlutenFree": false,
+    "description": "Traditional Swedish meatballs in cream sauce."
+  },
+  {
+    "title": "Steak and Fries",
+    "subtitle": "American Steakhouse Classic",
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947",
+    "isGlutenFree": true,
+    "description": "Grilled ribeye steak with crispy french fries."
+  },
+  {
+    "title": "Grilled Salmon",
+    "subtitle": "Healthy Fish Dish",
+    "image": "https://images.unsplash.com/photo-1567121938596-c3c2a72ca4e8",
+    "isGlutenFree": true,
+    "description": "Fresh salmon fillet grilled with lemon and herbs."
+  },
+  {
+    "title": "Chicken Fajitas",
+    "subtitle": "Mexican Classic",
+    "image": "https://images.unsplash.com/photo-1597393353415-b3730f3719fe",
+    "isGlutenFree": false,
+    "description": "Sizzling chicken with peppers and onions, served with tortillas."
+  },
+  {
+    "title": "Fajita Bowl",
+    "subtitle": "Gluten-Free Mexican",
+    "image": "https://images.unsplash.com/photo-1597393353415-b3730f3719fe",
+    "isGlutenFree": true,
+    "description": "Fajita ingredients served over rice instead of tortillas."
+  },
+  {
+    "title": "Chicken Piccata",
+    "subtitle": "Italian Classic",
+    "image": "https://images.unsplash.com/photo-1548675013-656d2c177716",
+    "isGlutenFree": false,
+    "description": "Breaded chicken in lemon-caper sauce."
+  },
+  {
+    "title": "Grilled Chicken Piccata",
+    "subtitle": "Gluten-Free Italian",
+    "image": "https://images.unsplash.com/photo-1548675013-656d2c177716",
+    "isGlutenFree": true,
+    "description": "Grilled chicken in lemon-caper sauce, no breading."
+  },
+  {
+    "title": "Fine Bulgur",
+    "subtitle": "Turkish Grain Product",
+    "image": "https://images.unsplash.com/photo-1558642891-54be180ea339",
+    "isGlutenFree": false,
+    "description": "Finely ground bulgur wheat for köfte and pilaf."
+  },
+  {
+    "title": "Coarse Bulgur",
+    "subtitle": "Traditional Grain",
+    "image": "https://images.unsplash.com/photo-1558642891-54be180ea339",
+    "isGlutenFree": false,
+    "description": "Coarse ground bulgur wheat for pilaf dishes."
+  },
+  {
+    "title": "Pide with Cheese",
+    "subtitle": "Turkish Pizza",
+    "image": "https://images.unsplash.com/photo-1628840042765-356cda07504e",
+    "isGlutenFree": false,
+    "description": "Boat-shaped Turkish bread with cheese filling."
+  },
+  {
+    "title": "Pide with Meat",
+    "subtitle": "Turkish Pizza with Meat",
+    "image": "https://images.unsplash.com/photo-1628840042765-356cda07504e",
+    "isGlutenFree": false,
+    "description": "Traditional pide with seasoned ground meat."
+  },
+  {
+    "title": "İskender Kebab",
+    "subtitle": "Turkish Meat Dish",
+    "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38",
+    "isGlutenFree": false,
+    "description": "Sliced döner on bread with tomato sauce and yogurt."
+  },
+  {
+    "title": "İskender Bowl",
+    "subtitle": "Gluten-Free Version",
+    "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38",
+    "isGlutenFree": true,
+    "description": "İskender kebab served over rice instead of bread."
+  },
+  {
+    "title": "Adana Kebab",
+    "subtitle": "Spicy Turkish Kebab",
+    "image": "https://images.unsplash.com/photo-1559847844-5315695dadae",
+    "isGlutenFree": true,
+    "description": "Spicy ground lamb kebab on skewers."
+  },
+  {
+    "title": "Urfa Kebab",
+    "subtitle": "Turkish Kebab",
+    "image": "https://images.unsplash.com/photo-1603360946369-dc9bb6258143",
+    "isGlutenFree": true,
+    "description": "Less spicy version of ground lamb kebab."
+  },
+  {
+    "title": "İçli Köfte",
+    "subtitle": "Stuffed Bulgur Balls",
+    "image": "https://images.unsplash.com/photo-1515516969-d4008cc6241a",
+    "isGlutenFree": false,
+    "description": "Bulgur shells stuffed with seasoned meat."
+  },
+  {
+    "title": "Kısır",
+    "subtitle": "Bulgur Salad",
+    "image": "https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf",
+    "isGlutenFree": false,
+    "description": "Traditional Turkish bulgur salad with herbs."
+  },
+  {
+    "title": "Tarhana Soup",
+    "subtitle": "Traditional Turkish Soup",
+    "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd",
+    "isGlutenFree": false,
+    "description": "Dried yogurt and flour based soup."
+  },
+  {
+    "title": "Yayla Soup",
+    "subtitle": "Turkish Yogurt Soup",
+    "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd",
+    "isGlutenFree": false,
+    "description": "Rice and yogurt soup with dried mint."
+  },
+  {
+    "title": "Mantı in Yogurt",
+    "subtitle": "Turkish Dumplings",
+    "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950",
+    "isGlutenFree": false,
+    "description": "Small dumplings served with yogurt sauce."
+  },
+  {
+    "title": "Çiğ Köfte",
+    "subtitle": "Raw Meatball",
+    "image": "https://images.unsplash.com/photo-1585437631855-70f1c8b7eea5",
+    "isGlutenFree": false,
+    "description": "Spicy raw meatballs made with bulgur and ground meat."
+  },
+  {
+    "title": "Vegetarian Çiğ Köfte",
+    "subtitle": "Bulgur Balls",
+    "image": "https://images.unsplash.com/photo-1585437631855-70f1c8b7eea5",
+    "isGlutenFree": false,
+    "description": "Spicy bulgur balls without meat."
+  },
+  {
+    "title": "Zeytinyağlı Fasulye",
+    "subtitle": "Turkish Green Beans",
+    "image": "https://images.unsplash.com/photo-1567575990843-408cce6d011a",
+    "isGlutenFree": true,
+    "description": "Green beans cooked in olive oil with onions and tomatoes."
+  },
+  {
+    "title": "Zeytinyağlı Pırasa",
+    "subtitle": "Turkish Leeks",
+    "image": "https://images.unsplash.com/photo-1590779033445-8a9b56788d5f",
+    "isGlutenFree": true,
+    "description": "Leeks cooked in olive oil with carrots and rice."
+  },
+  {
+    "title": "Baklava",
+    "subtitle": "Turkish Sweet Pastry",
+    "image": "https://images.unsplash.com/photo-1519676867240-f03562e64548",
+    "isGlutenFree": false,
+    "description": "Layered pastry filled with nuts and syrup."
+  },
+  {
+    "title": "Sütlaç",
+    "subtitle": "Turkish Rice Pudding",
+    "image": "https://images.unsplash.com/photo-1587314168485-3236d6710814",
+    "isGlutenFree": true,
+    "description": "Traditional Turkish baked rice pudding with vanilla."
+  },
+  {
+    "title": "Aşure",
+    "subtitle": "Noah's Pudding",
+    "image": "https://images.unsplash.com/photo-1504387432042-8aca7c138087",
+    "isGlutenFree": true,
+    "description": "Traditional dessert made with grains, dried fruits and nuts."
+  },
+  {
+    "title": "Menemen",
+    "subtitle": "Turkish Egg Dish",
+    "image": "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db",
+    "isGlutenFree": true,
+    "description": "Scrambled eggs with tomatoes, peppers and spices."
+  },
+  {
+    "title": "Patlıcan Musakka",
+    "subtitle": "Turkish Moussaka",
+    "image": "https://images.unsplash.com/photo-1662376569736-92b2935a0db1",
+    "isGlutenFree": true,
+    "description": "Layered eggplant dish with ground meat and bechamel sauce."
+  },
+  {
+    "title": "Cacık",
+    "subtitle": "Turkish Yogurt Dip",
+    "image": "https://images.unsplash.com/photo-1593001874117-c99c800e3eb7",
+    "isGlutenFree": true,
+    "description": "Yogurt with cucumbers, garlic and herbs."
+  },
+  {
+    "title": "Ezogelin Çorbası",
+    "subtitle": "Bride Soup",
+    "image": "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db",
+    "isGlutenFree": true,
+    "description": "Traditional soup with red lentils, bulgur and mint."
+  },
+  {
+    "title": "İmambayıldı",
+    "subtitle": "Stuffed Eggplant",
+    "image": "https://images.unsplash.com/photo-1662376569736-92b2935a0db0",
+    "isGlutenFree": true,
+    "description": "Eggplant stuffed with vegetables in olive oil."
+  },
+  {
+    "title": "Lahmacun",
+    "subtitle": "Turkish Thin Crust Pizza",
+    "image": "https://images.unsplash.com/photo-1633321702518-7feccfdc6f03",
+    "isGlutenFree": false,
+    "description": "Thin dough topped with minced meat, vegetables and spices."
+  },
+  {
+    "title": "Dolma",
+    "subtitle": "Stuffed Grape Leaves",
+    "image": "https://images.unsplash.com/photo-1587487247685-e9b1d6f53a7e",
+    "isGlutenFree": true,
+    "description": "Grape leaves stuffed with rice, herbs and spices."
+  },
+  {
+    "title": "Mercimek Çorbası",
+    "subtitle": "Red Lentil Soup",
+    "image": "https://images.unsplash.com/photo-1547592180-960a8f7f31ca",
+    "isGlutenFree": true,
+    "description": "Creamy red lentil soup with spices."
+  },
+  {
+    "title": "Künefe",
+    "subtitle": "Turkish Cheese Dessert",
+    "image": "https://images.unsplash.com/photo-1576612119302-5b9e5c59a234",
+    "isGlutenFree": false,
+    "description": "Sweet cheese dessert made with shredded phyllo dough."
+  },
+  {
+    "title": "Karnıyarık",
+    "subtitle": "Stuffed Eggplant",
+    "image": "https://images.unsplash.com/photo-1662376569736-92b2935a0db2",
+    "isGlutenFree": true,
+    "description": "Eggplant stuffed with ground meat and vegetables."
+  },
+  {
+    "title": "İmam Bayıldı",
+    "subtitle": "Vegetarian Stuffed Eggplant",
+    "image": "https://images.unsplash.com/photo-1662376569736-92b2935a0db3",
+    "isGlutenFree": true,
+    "description": "Eggplant stuffed with onions, garlic and tomatoes."
+  },
+  {
+    "title": "Patlıcan Kebab",
+    "subtitle": "Eggplant Kebab",
+    "image": "https://images.unsplash.com/photo-1603360946369-dc9bb6258144",
+    "isGlutenFree": true,
+    "description": "Grilled eggplant and meat kebab."
+  },
+  {
+    "title": "Tavuk Şiş",
+    "subtitle": "Chicken Shish Kebab",
+    "image": "https://images.unsplash.com/photo-1603360946369-dc9bb6258145",
+    "isGlutenFree": true,
+    "description": "Grilled chicken pieces on skewers."
+  },
+  {
+    "title": "Midye Dolma",
+    "subtitle": "Stuffed Mussels",
+    "image": "https://images.unsplash.com/photo-1624374545793-78c83ec49c1c",
+    "isGlutenFree": false,
+    "description": "Mussels stuffed with spiced rice."
+  },
+  {
+    "title": "Balık Ekmek",
+    "subtitle": "Fish Sandwich",
+    "image": "https://images.unsplash.com/photo-1580476262798-bddd9f4b7369",
+    "isGlutenFree": false,
+    "description": "Traditional fish sandwich with onions and lettuce."
+  },
+  {
+    "title": "Kokoreç",
+    "subtitle": "Grilled Lamb Intestines",
+    "image": "https://images.unsplash.com/photo-1567575990843-408cce6d012a",
+    "isGlutenFree": false,
+    "description": "Seasoned and grilled lamb intestines in bread."
+  }
+]

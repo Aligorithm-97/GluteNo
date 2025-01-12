@@ -47,18 +47,19 @@ import { LogoComponent } from "../logo/logo.component";
             class="login-form"
           >
             <mat-form-field appearance="outline">
-              <mat-label>Username</mat-label>
+              <mat-label>Email</mat-label>
               <input
                 matInput
-                formControlName="username"
-                type="text"
-                placeholder="Enter your username"
+                formControlName="email"
+                type="email"
+                placeholder="Enter your email"
               />
-              <mat-icon matPrefix>person</mat-icon>
-              <mat-error
-                *ngIf="loginForm.get('username')?.hasError('required')"
-              >
-                Username is required
+              <mat-icon matPrefix>email</mat-icon>
+              <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+                Email is required
+              </mat-error>
+              <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
+                Invalid email format
               </mat-error>
             </mat-form-field>
 
@@ -185,10 +186,6 @@ export class AdminLoginComponent {
   loginForm: FormGroup;
   hidePassword = true;
 
-  // Sabit kullanıcı adı ve şifre (gerçek uygulamada bu bilgiler güvenli bir şekilde saklanmalıdır)
-  private readonly ADMIN_USERNAME = "admin";
-  private readonly ADMIN_PASSWORD = "admin123";
-
   constructor(
     private fb: FormBuilder,
     private snackBar: MatSnackBar,
@@ -196,33 +193,37 @@ export class AdminLoginComponent {
     private authService: AuthService
   ) {
     this.loginForm = this.fb.group({
-      username: ["", Validators.required],
+      email: ["", [Validators.required, Validators.email]],
       password: ["", Validators.required],
     });
   }
 
   onSubmit() {
     if (this.loginForm.valid) {
-      const { username, password } = this.loginForm.value;
+      const { email, password } = this.loginForm.value;
 
-      if (
-        username === this.ADMIN_USERNAME &&
-        password === this.ADMIN_PASSWORD
-      ) {
-        this.authService.login();
-        this.snackBar.open("Login successful!", "Close", {
-          duration: 3000,
-          horizontalPosition: "end",
-          verticalPosition: "top",
-        });
-        this.router.navigate(["/admin/panel"]);
-      } else {
-        this.snackBar.open("Invalid username or password!", "Close", {
-          duration: 3000,
-          horizontalPosition: "end",
-          verticalPosition: "top",
-        });
-      }
+      this.authService.authenticate(email, password).subscribe({
+        next: () => {
+          this.snackBar.open("Login successful!", "Close", {
+            duration: 3000,
+            horizontalPosition: "end",
+            verticalPosition: "top",
+          });
+          this.router.navigate(["/admin/panel"]);
+        },
+        error: (error) => {
+          console.error("Login error:", error);
+          this.snackBar.open(
+            error.error?.message || "Invalid email or password!",
+            "Close",
+            {
+              duration: 3000,
+              horizontalPosition: "end",
+              verticalPosition: "top",
+            }
+          );
+        },
+      });
     }
   }
 }

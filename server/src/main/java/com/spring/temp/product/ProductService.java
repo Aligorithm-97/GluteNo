@@ -18,4 +18,8 @@ public class ProductService {
         return  productRepository.findById(id)
                 .orElseThrow(()->new RuntimeException("Product Not Found!"));
     }
+
+    public void addProduct(List<Product> product) {
+        productRepository.saveAll(product);
+    }
 }

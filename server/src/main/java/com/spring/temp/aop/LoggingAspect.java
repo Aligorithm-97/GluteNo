@@ -42,9 +42,6 @@ public class LoggingAspect {
         UserActions userActions = new UserActions();
         userActions.setUsername(username);
         userActions.setIp(ip);
-        userActions.setMethodName(methodName);
-        userActions.setArguments(arguments);
-        userActions.setResult(result != null ? result.toString() : "void");
         userActions.setTimestamp(LocalDateTime.now());
 
         userActionsRepository.save(userActions);

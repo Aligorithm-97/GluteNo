@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { Observable, of } from "rxjs";
 import { environment } from "../../../environments/environment";
 import { Product } from "../../shared/interfaces/product.interface";
 
@@ -9,6 +9,7 @@ import { Product } from "../../shared/interfaces/product.interface";
 })
 export class ApiService {
   private baseUrl = environment.apiBaseUrl;
+  private mealDbUrl = "https://www.themealdb.com/api/json/v1/1";
 
   constructor(private http: HttpClient) {}
 
@@ -54,5 +55,10 @@ export class ApiService {
   // Ürün ara
   searchProducts(term: string): Observable<Product[]> {
     return this.http.get<Product[]>(`${this.baseUrl}products?search=${term}`);
+  }
+
+  // TheMealDB'den resim almak için yardımcı metod
+  getMealImage(mealName: string): Observable<any> {
+    return this.http.get(`${this.mealDbUrl}/search.php?s=${mealName}`);
   }
 }
