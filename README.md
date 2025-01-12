@@ -1,46 +1,101 @@
 # GluteNot 🥖
 
-GluteNot, gluten içeren ve glutensiz yemekleri keşfetmenize yardımcı olan bir web uygulamasıdır. Çölyak hastaları, gluten hassasiyeti olanlar veya glutensiz beslenmeyi tercih edenler için tasarlanmıştır.
+**GluteNot** is a web application designed to help you discover gluten-free and gluten-containing meals. It is tailored for individuals with celiac disease, gluten sensitivity, or those who prefer a gluten-free diet.
 
-![GluteNot Logo](./src/assets/images/gluteNot.png)
+![GluteNot Logo](./client/src/assets/gluteNot.png)
 
-## 🌟 Özellikler
+## 🌟 Features
 
-- Glutensiz ve glutenli yemekleri filtreleme
-- Detaylı yemek bilgileri ve görseller
-- Yemek arama
-- Kategori bazlı filtreleme
-- Koyu/Açık tema desteği
-- Mobil uyumlu tasarım
-- Admin paneli ile yemek yönetimi
+- Filter meals based on gluten content
+- Detailed meal information with images
+- Search functionality for meals
+- Category-based filtering
+- Dark/Light mode support
+- Mobile-friendly design
+- Admin panel for managing meals
 
-## 🛠️ Kullanılan Teknolojiler
+## 🛠️ Technologies Used
 
 - **Frontend:** Angular 17
-- **UI Kütüphanesi:** Angular Material
-- **State Yönetimi:** RxJS
-- **Stil:** CSS & Angular Material Theming
-- **Kimlik Doğrulama:** JWT
+- **UI Library:** Angular Material
+- **State Management:** RxJS
+- **Styling:** CSS & Angular Material Theming
+- **Authentication:** JWT
 - **API:** Spring Boot
 
-## 🚀 Kurulum
+## 🚀 Getting Started
 
-1. Repoyu klonlayın:
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/glutenot.git
+   ```
+
+2. Install the dependencies:
+
+   ```bash
+   npm install
+   ```
+
+## 🛠️ Build and Run
+
+### Running the Frontend
 
 ```bash
-git clone https://github.com/yourusername/glutenot.git
+  npm start
 ```
 
-2. Gerekli bağımlılıkları yükleyin:
+Navigate to `http://localhost:4200/` to view the application.
+
+### Running the Backend
+
+Ensure you have Java and Maven installed. Then navigate to the backend folder and run:
 
 ```bash
-npm install
+   mvn spring-boot:run
 ```
 
-## 👥 Katkıda Bulunma
+## 🛠️ Admin Panel
 
-1. Bu repoyu fork edin
-2. Feature branch oluşturun (`git checkout -b feature/YeniOzellik`)
-3. Değişikliklerinizi commit edin (`git commit -m 'Yeni özellik eklendi'`)
-4. Branch'inizi push edin (`git push origin feature/YeniOzellik`)
-5. Pull Request oluşturun
+The admin panel allows you to:
+
+- Add new meals
+- Edit existing meals
+- Delete meals
+
+Access to the admin panel is restricted to authenticated users.
+
+## 💬 Contributing
+
+We welcome contributions to GluteNot! To get started:
+
+1. Fork this repository.
+2. Create a feature branch:
+
+   ```bash
+   git checkout -b feature/NewFeature
+   ```
+
+3. Commit your changes:
+
+   ```bash
+   git commit -m 'Add new feature'
+
+   ```
+
+4. Push the branch:
+
+   ```bash
+   git push origin feature/NewFeature
+
+   ```
+
+5. Open a Pull Request.
+
+## 🔧 Issues
+
+If you encounter any issues, please [open an issue](https://github.com/yourusername/glutenot/issues) on GitHub.
+
+---
+
+Thank you for using GluteNot! 🌱
